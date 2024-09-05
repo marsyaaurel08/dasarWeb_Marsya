@@ -11,10 +11,29 @@ body {
 
 /*Latihan 1*/
 .container-satu {
-    width: 800px;
+    width: 900px;
     margin: 50px;
     background-color: #fff;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
+
+}
+.sidebar-satu{
+    flex: 10;                 
+    padding: 20px;
+    background-color:lightblue;
+}
+.kolom-utama{
+    flex: 40;                 
+    text-align: left;       
+    padding: 20px;
+    background-color: pink;
+}
+
+.sidebar-dua{
+    flex: 10;                 
+    padding: 20px;
+    background-color: lightgreen;
+
 }
