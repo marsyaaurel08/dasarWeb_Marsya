@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Membuat Form HTML</title>
+</head>
+
+<body>
+
+    <form action="" method="post">
+
+        <fieldset>
+            <legend>Data Mahasiswa</legend><br>
+
+            <label for="nama">Nama</label>
+            <input type="text" name="nama" id="nama"><br><br>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email"><br><br>
+
+            <label for="tanggallahir">Tanggal Lahir</label>
+            <input type="date" name="tanggallahir" id="tanggallahir"><br><br>
+
+            <label for="jeniskelamin">Jenis Kelamin</label>
+            <select name="jeniskelamin" id="jeniskelamin">
+                <option value="laki-laki">Laki-Laki</option>
+                <option value="perempuan">Perempuan</option>
+            </select><br><br>
+
+            <label for="alamat">Alamat</label><br>
+            <textarea id="alamat" name="alamat" rows="7" cols="100"></textarea><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Komentar</legend><br>
+
+            <label for="sumber">Darimana Anda mengetahui buku ini?</label>
+            <select name="sumber" id="sumber">
+                <option value="google" selected>Google</option>
+                <option value="media sosial">Media Sosial</option>
+                <option value="pamflet">Pamflet</option>
+            </select><br><br>
+
+            <label for="option">Bagaimana menurut Anda terhadap buku ini?</label><br>
+            <input type="radio" name="option" id="optionBiasa" value="biasa">Biasa
+            <input type="radio" name="option" id="optionBagus" value="bagus">Bagus
+            <input type="radio" name="option" id="optionMenarik" value="menarik">Menarik<br><br>
+
+            <label for="komentar">Komentar Anda:</label><br>
+            <textarea id="komentar" name="komentar" rows="7" cols="50"></textarea><br><br>
+
+            <input type="checkbox" name="emailSend" id="emailSend" value="emailSend">
+            <label for="emailSend">Kirim ke Email bila ada info terbaru</label>
+        </fieldset><br>
+
+        <center><input type="submit" value="Kirim"></center>
+
+    </form>
+
+</body>
+
+</html>
