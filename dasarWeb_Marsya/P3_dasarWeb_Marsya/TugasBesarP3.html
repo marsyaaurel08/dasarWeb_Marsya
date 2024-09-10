@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tugas Pertemuan 3</title>
+    </head>
+    <body>
+        <form id="myForm" methods="GET" action="">
+        
+            <label for="firstname">First Name: </label>
+            <input type="text" name="firstname" id="firstname"><br><br>
+            <label for="lastname">Last Name: </label>
+            <input type="text" name="lastname" id="lastname"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <p id="message"></p>
+
+        <script>
+            
+            document.getElementById('myForm').addEventListener('submit', function(event) {
+                // Ambil nilai dari input
+                var firstName = document.getElementById('firstname').value;
+                var lastName = document.getElementById('lastname').value;
+                
+                // Ambil elemen untuk menampilkan pesan
+                var message = document.getElementById('message');
+                
+                // Cek apakah salah satu input kosong
+                if (!firstName || !lastName) {
+                    
+                    if (!firstName) {
+                        alert("Mohon isi First Name terlebih dahulu")
+                    } else if (!lastName) {
+                        alert("Mohon isi Last Name terlebih dahulu")
+                    }
+                } else {
+                    
+                    alert("Halo! Selamat datang")
+                }
+            });
+        </script>
+    </body>
+</html>
