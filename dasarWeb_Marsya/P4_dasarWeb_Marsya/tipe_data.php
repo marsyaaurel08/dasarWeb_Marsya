@@ -19,16 +19,17 @@ $nilaiBahasaIndonesia = 9.3;
 
 $rataRata = ($nilaiMatematika + $nilaiIPA + $nilaiBahasaIndonesia) / 3;
 
-echo "Matematika: {$nilaiMatematika} <br>";
+echo "<br><br>Matematika: {$nilaiMatematika} <br>";
 echo "IPA: {$nilaiIPA} <br>";
 echo "Bahasa Indonesia: {$nilaiBahasaIndonesia} <br>";
 echo "Rata-rata: {$rataRata} <br>";
-
 var_dump($rataRata);
 
+echo "<br>";
 $apakahSiswaLulus = true;
 $apakahSiswaSudahUjian = false;
 
+echo "<br>";
 var_dump($apakahSiswaLulus);
 echo "<br>";
 var_dump($apakahSiswaSudahUjian);
@@ -40,11 +41,12 @@ $namaLengkap = "{$namaDepan} {$namaBelakang}";
 $namaengkap2 = $namaDepan . ' ' . $namaBelakang;
 
 
-echo "Nama Depan: {$namaDepan} <br>";
+echo "<br><br>Nama Depan: {$namaDepan} <br>";
 echo 'Nama Belakang: ' . $namaBelakang . '<br>';
 
 echo $namaLengkap;
 
 $listMahasiswa = ["Wahid Abdullah", "Elmo Bachtiar", "Lendis Fabri"];
+echo "<br>";
 echo $listMahasiswa[0];
 ?>
