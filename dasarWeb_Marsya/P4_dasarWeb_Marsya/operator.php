@@ -76,5 +76,11 @@ echo "<br>";
 echo "Hasil Modulo/Sisa Bagi: {$hasilModulo}" ;
 echo "<br>";
 
+$hasilIdentik = $a === $b;
+$hasilTidakIdentik = $a !== $b;
+
+echo "<br>Hasil Identik: {$hasilIdentik} <br>";
+echo "Hasil Tidak Identik: {$hasilTidakIdentik} <br>";
+
 
 ?>
