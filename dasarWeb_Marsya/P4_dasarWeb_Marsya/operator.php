@@ -59,4 +59,22 @@ echo "<br>";
 echo "Hasil Not B: {$hasilNotB}" ;
 echo "<br><br>";
 
+$hasilPenjumlahan = $a += $b;
+$hasilPengurangan = $a -= $b;
+$hasilPerkalian = $a *= $b;
+$hasilPembagian = $a /= $b;
+$hasilModulo = $a %= $b;
+
+echo "Hasil Penjumlahan: {$hasilPenjumlahan}" ;
+echo "<br>";
+echo "Hasil Pengurangan: {$hasilPengurangan}" ;
+echo "<br>";
+echo "Hasil Perkalian: {$hasilPerkalian}" ;
+echo "<br>";
+echo "Hasil Pembagian: {$hasilPembagian}" ;
+echo "<br>";
+echo "Hasil Modulo/Sisa Bagi: {$hasilModulo}" ;
+echo "<br>";
+
+
 ?>
