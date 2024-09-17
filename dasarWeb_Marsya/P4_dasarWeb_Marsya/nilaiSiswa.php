@@ -8,21 +8,22 @@ echo implode(", ", $nilaiSiswa) . "<br><br>";
 sort($nilaiSiswa);
 
 // Menampilkan dua nilai terendah
-$duaTerendah = array_slice($nilaiSiswa, 0, 2);
-echo "Dua nilai terendah: " . implode(", ", $duaTerendah) . "<br>";
+echo "Dua nilai terendah: " . $nilaiSiswa[0] . ", " . $nilaiSiswa[1] . "<br>";
 
 // Menampilkan dua nilai tertinggi
-$duaTertinggi = array_slice($nilaiSiswa, -2);
-echo "Dua nilai tertinggi: " . implode(", ", $duaTertinggi) . "<br><br>";
+echo "Dua nilai tertinggi: " . $nilaiSiswa[count($nilaiSiswa) - 2] . ", " . $nilaiSiswa[count($nilaiSiswa) - 1] . "<br><br>";
 
 // Menghapus dua nilai terendah dan dua nilai tertinggi
-$nilaiYangDipakai = array_slice($nilaiSiswa, 2, -2);
+$totalNilai = 0;
+$jumlahNilai = 0;
 
-// Menghitung total nilai setelah mengabaikan dua nilai tertinggi dan dua nilai terendah
-$totalNilai = array_sum($nilaiYangDipakai);
+for ($i = 2; $i < count($nilaiSiswa) - 2; $i++) {
+    $totalNilai += $nilaiSiswa[$i];
+    $jumlahNilai++;
+}
 
 // Menghitung rata-rata
-$rataRata = $totalNilai / count($nilaiYangDipakai);
+$rataRata = $totalNilai / $jumlahNilai;
 
 echo "Total nilai setelah mengabaikan dua nilai tertinggi dan dua nilai terendah: " . $totalNilai . "<br>";
 echo "Rata-rata nilai: " . $rataRata . "<br>";
