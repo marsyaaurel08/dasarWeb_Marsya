@@ -36,7 +36,7 @@ var_dump($apakahSiswaSudahUjian);
 $namaDepan = "Ibnu";
 $namaBelakang = 'Jakaria';
 
-$namaLengkap = "{$namaDepan} + {$namaBelakang}";
+$namaLengkap = "{$namaDepan} {$namaBelakang}";
 $namaengkap2 = $namaDepan . ' ' . $namaBelakang;
 
 
