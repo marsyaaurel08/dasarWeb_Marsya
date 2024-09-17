@@ -33,4 +33,15 @@ var_dump($apakahSiswaLulus);
 echo "<br>";
 var_dump($apakahSiswaSudahUjian);
 
+$namaDepan = "Ibnu";
+$namaBelakang = 'Jakaria';
+
+$namaLengkap = "{$namaDepan} + {$namaBelakang}";
+$namaengkap2 = $namaDepan . ' ' . $namaBelakang;
+
+
+echo "Nama Depan: {$namaDepan} <br>";
+echo 'Nama Belakang: ' . $namaBelakang . '<br>';
+
+echo $namaLengkap;
 ?>
