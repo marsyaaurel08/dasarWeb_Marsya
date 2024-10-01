@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightpink;
+    margin: 0;
+    padding: 20px;
+}
+
+table {
+    width: 50%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid bisque;
+    text-align: left;
+}
+
+th {
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+td {
+    color: green;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    color: darkred;
+}
+
