@@ -1,77 +1,88 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <body>
-            <h1>Data Siswa</h1>
-            <style>
-                table {
-                    border-collapse: collapse;
-                    width: 100%;
-                }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Siswa</title>
+    <script src="../P5_dasarWeb_Marsya/praktik_jquery/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#flip").click(function() {
+                $("#kotak2").slideToggle("slow");
+            });
+        });
+    </script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: left;
+        }
+        #kotak2, #flip {
+            padding: 10px;
+            background-color: lightskyblue;
+            border: solid 2px black;
+            border-radius: 5px;
+        }   
+        #kotak2 {
+            text-align: left;
+            display: none;
+        }
+        #flip {
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
 
-                th, td {
-                    border: 1px solid #ddd;
-                    padding: 8px;
-                    text-align: left;
-                }
-
-                th {
-                    background-color: white;
-                }
-                
-            </style>
-        </head>
-
+    <div id="flip">Klik untuk Melihat Data Siswa</div>
+    <div id="kotak2"> 
+        <h1>Data Siswa</h1>
+        <table>
+            <tr>
+                <th>Nama</th>
+                <th>Umur</th>
+                <th>Kelas</th>
+                <th>Alamat</th>
+            </tr>
             <?php
-            $dataSiswa = [
-                'Nama' => [
-                    ['Nama' => 'Marsya'],
-                    ['Nama' => 'Aurel'],
-                    ['Nama' => 'Sefira'],
-                    ['Nama' => 'Marimar'],
-                ],
-                'Umur' => [
-                    ['Umur' => 19],
-                    ['Umur' => 18],
-                    ['Umur' => 20],
-                    ['Umur' => 19],
-                ],
-                'Kelas' => [
-                    ['Kelas' => '2H'],
-                    ['Kelas' => '1G'],
-                    ['Kelas' => '3E'],
-                    ['Kelas' => '2A'],
-                ],
-                'Alamat' => [
-                    ['Alamat' => 'Malang'],
-                    ['Alamat' => 'Surabaya'],
-                    ['Alamat' => 'Riau'],
-                    ['Alamat' => 'Bandung'],
-                ]
-            ];
-            // menghitung jumlah siswa
-            $jumlahSiswa = count($dataSiswa['Nama']);
+            $dataSiswa = array(
+                array("Marsya", 19, "2H", "Malang"),
+                array("Aurel", 18, "1G", "Surabaya"),
+                array("Sefira", 20, "3E", "Riau"),
+                array("Marimar", 19, "2A", "Bandung")
+            );
 
-            //menjumlahkan semua umur
-            $totalUmur = 0;
-            foreach ($dataSiswa['Umur'] as $umur) {
-            $totalUmur += $umur['Umur'];
-            }
-
-            echo "<table>";
-            echo "<tr><th>Nama</th><th>Umur</th><th>Kelas</th><th>Alamat</th></tr>";
-            for ($i = 0; $i < $jumlahSiswa; $i++) {
+            $totalUmur = 0; 
+            
+            for ($i = 0; $i < count($dataSiswa); $i++) {
                 echo "<tr>";
-                echo "<td>" . $dataSiswa['Nama'][$i]['Nama'] . "</td>";
-                echo "<td>" . $dataSiswa['Umur'][$i]['Umur'] . "</td>";
-                echo "<td>" . $dataSiswa['Kelas'][$i]['Kelas'] . "</td>";
-                echo "<td>" . $dataSiswa['Alamat'][$i]['Alamat'] . "</td>";
+                echo "<td>" . $dataSiswa[$i][0] . "</td>";
+                echo "<td>" . $dataSiswa[$i][1] . "</td>";
+                echo "<td>" . $dataSiswa[$i][2] . "</td>";
+                echo "<td>" . $dataSiswa[$i][3] . "</td>";
                 echo "</tr>";
+                
+                
+                $totalUmur += $dataSiswa[$i][1];
             }
-            //menghitung rata-rata usia
-            $rataRataUmur = $totalUmur / $jumlahSiswa;
-            echo "Rata-rata Umur Siswa: ". $rataRataUmur;
+
+            // Menghitung rata-rata umur
+            $rataUmur = $totalUmur / count($dataSiswa);
             ?>
-        </body>
-    </head>
+        </table>
+
+        
+        <h2>Rata-rata Umur Siswa: <?php echo $rataUmur;?> tahun</h2>
+    </div>
+
+</body>
 </html>
