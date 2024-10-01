@@ -32,20 +32,30 @@
 
 //FUNGSI DENGAN NILAI DEFAULT
 //membuat fungsi
-function perkenalan($nama, $salam="Assalamualaikum"){
-    echo  $salam. ", ";
-    echo "Perkenalkan, nama saya ". $nama. "<br/>";
-    echo "Senang berkenalan dengan Anda<br/>";
-}
+//function perkenalan($nama, $salam="Assalamualaikum"){
+  //  echo  $salam. ", ";
+    //echo "Perkenalkan, nama saya ". $nama. "<br/>";
+    //echo "Senang berkenalan dengan Anda<br/>";
+//}
 
 //memanggil fungsi yang sudah dibuat
-perkenalan("Aurelia","Hallo");
+//perkenalan("Aurelia","Hallo");
 
-echo "<hr>";
+//echo "<hr>";
 
-$saya = "Marsya";
-$ucapanSalam = "Selamat pagi";
+//$saya = "Marsya";
+//$ucapanSalam = "Selamat pagi";
 
 //memanggil lagi tanpa mengisi parameter salam
-perkenalan($saya);
+//perkenalan($saya);
+
+//FUNGSI YANG MENGEMBALIKAN NILAI
+//membuat fungsi
+function hitungUmur($thn_lahir, $thn_sekarang){
+    $umur = $thn_sekarang - $thn_lahir;
+    return $umur;
+
+}
+
+echo "Umur saya adalah ". hitungUmur(2005, 2024). " tahun" 
 ?>
