@@ -15,14 +15,23 @@
             <input type="text" id="email" name="email">
             <span id="email-error" style="color: red;"></span><br><br><br>
 
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <span id="password-error" style="color: red;"></span><br><br><br>
+
             <input type="submit" value="Submit">
         </form>
+        <div id="hasil">
+
+        </div>
             
             <script>
                 $(document).ready(function() {
-                    $("#myForm").submit(function(event) {
+                    $("#myForm").submit(function(e) {
+                        e.preventDefault();
                     var nama = $("#nama").val();
                     var email = $("email").val();
+                    var password = $("password").val();
                     var valid = true;
 
                     if (nama === "" ) {
@@ -31,20 +40,29 @@
                     } else {
                         $("#nama-error").text("");
                     }
+                    if (email === "" ) {
+                        $("#email-error").text("Email harus diisi.");
+                        valid = false;
+                    } else {
+                        $("#email-error").text("");
+                    }
+                    if (password === "" ) {
+                        $("#password-error").text("Password harus diisi.");
+                        valid = false;
+                    } else {
+                        $("#password-error").text("");
+                    }
                     //menggunakan ajax
                     if (valid) {
                         $.ajax({
                             url: "proses_validasi.php",
                             type: "POST",
-                            data: {
-                                nama: nama,
-                                email: email
-                            },
+                            data: formData,
                             success: function(response) {
-                                alert("Data berhasil dikirim: " + response);
+                                $("#hasil").html(response);
                             },
-                            error: function(xhr, status, error) {
-                                alert("Terjadi kesalahan: " + error);
+                            error: function(response) {
+                                $("#hasil").html("Terjadi Kesalahan");
                             }
                 });
             }

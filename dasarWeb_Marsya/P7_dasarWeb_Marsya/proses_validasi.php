@@ -2,7 +2,9 @@
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $nama = $_POST["nama"];
                 $email = $_POST["email"];
+                $password = $_POST["password"];
                 $errors = array();
+                
                 // Validasi Nama
                 if (empty($nama)) {
                     $errors[] = "Nama harus diisi.";
@@ -21,7 +23,7 @@
                 } else {
                     // Lanjutkan dengan pemrosesan data jika semua validasi berhasil
                     // Misalnya, menyimpan data ke database atau megirim email
-                    echo "Data berhasil dikirim: Nama = $nama, Email = $email";
+                    echo "Data berhasil dikirim: <br>Nama = $nama, Email = $email";
                 }
             }
             ?>
