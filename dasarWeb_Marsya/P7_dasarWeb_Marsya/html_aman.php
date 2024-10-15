@@ -14,6 +14,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
         }
 
+    if (empty($_POST['email'])) {
+        $emailError = "Isi Email Terlebih Dulu!";
+    } else {
+        $email = $_POST['email'];
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailError =  "<br>Email Valid.";
+        } else {
+            $emailError = "<br>Email Tidak Valid.";
+        }
+    }
 }
 ?>
 <html>
@@ -26,6 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="input">Nama:</label>
         <input type="text" name="input" id="input" value="<?php echo $input; ?>">
         <span class="error"><?php echo $inputError; ?></span><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" value="<?php echo $email; ?>">
+        <span class="error"><?php echo $emailError; ?></span><br><br>
 
         <input type="submit" name="submit" value="Submit">
     </form>
