@@ -29,7 +29,7 @@ echo $new_text; // Output : "I like banana pie."
 
 echo "<br><br>";
 
-$pattern = '/go*d/'; //Cocokkan "god", "good", "gooood", dll.
+$pattern = '/go?d/'; //Cocokkan "god", "good", "gooood", dll.
 $text = 'god is good.';
 
 if (preg_match($pattern, $text, $matches)) {
