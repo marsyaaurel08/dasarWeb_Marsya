@@ -11,6 +11,9 @@ if(isset($_POST["submit"])) {
     {
         if(move_uploaded_file($_FILES["myfile"]["tmp_name"], $targetfile)) {
             echo "File berhasil diunggah.";
+            // Menampilkan gambar thumbnail setelah berhasil upload
+            echo "<img src='".$targetfile."' width='200px' style='display:block;' alt='Thumbnail'>";
+
         } else {
             echo "Gagal mengunggah file.";
         }
