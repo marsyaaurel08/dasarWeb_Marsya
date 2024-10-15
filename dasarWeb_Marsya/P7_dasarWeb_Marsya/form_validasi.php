@@ -31,20 +31,26 @@
                     } else {
                         $("#nama-error").text("");
                     }
-
-                    if (email === "" ) {
-                        $("#email-error").text("Email harus diisi.");
-                        valid = false;
-                    } else {
-                        $("#email-error").text("");
-                    }
-
+                    //menggunakan ajax
                     if (valid) {
-                        (!event.preventDefault());
-                        // Menghentikan pengiriman form jika validasi gagal
-                    }
+                        $.ajax({
+                            url: "proses_validasi.php",
+                            type: "POST",
+                            data: {
+                                nama: nama,
+                                email: email
+                            },
+                            success: function(response) {
+                                alert("Data berhasil dikirim: " + response);
+                            },
+                            error: function(xhr, status, error) {
+                                alert("Terjadi kesalahan: " + error);
+                            }
                 });
+            }
+
             });
+        });
             </script>     
     </body>
 </html>
