@@ -7,7 +7,7 @@ if (!file_exists($targetDirectory)) {
     mkdir($targetDirectory, 0777, true);
 }
 if ($_FILES['files']['name'][0]) {
-    $totalFiles = count($_Files['files']['name']);
+    $totalFiles = count($_FILES['files']['name']);
 
     // Loop melalui semua file yang diunggah
     for ($i = 0; $i < $totalFiles; $i++) {
