@@ -6,12 +6,15 @@ $targetDirectory = "documents/";
 if (!file_exists($targetDirectory)) {
     mkdir($targetDirectory, 0777, true);
 }
-if ($_FILES['files']['name'][0]) {
+
+// Cek apakah ada file yang diunggah
+if (isset($_FILES['files']['name'][0]) && $_FILES['files']['name'][0] != '') {
     $totalFiles = count($_FILES['files']['name']);
 
     // Loop melalui semua file yang diunggah
     for ($i = 0; $i < $totalFiles; $i++) {
-        $fileName = $_FILES['files']['name'][$i];
+        
+        $fileName = basename($_FILES['files']['name'][$i]);
         $targetFile = $targetDirectory . $fileName;
 
         // Pindahkan file yang diunggah ke direktori penyimpanan
@@ -24,4 +27,3 @@ if ($_FILES['files']['name'][0]) {
 } else {
     echo "Tidak ada file yang diunggah.";
 }
-?>
