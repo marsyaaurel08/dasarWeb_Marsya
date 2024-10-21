@@ -13,14 +13,17 @@
     </script>
     <script>
         $(document).ready(function() {
-            // Sembunyikan bagian katalog, tentang kami, dan comment pada awalnya
+            // Hide bagian katalog, tentang kami, dan comment pada awalnya
             $("#katalogSection").hide();
             $("#tentangKamiSection").hide();
             $("#commentSection").hide();
+            $("#logoSection").hide();
+            
 
             // Tampilkan bagian katalog dan comment setelah tombol next diklik
             $("#nextButton").click(function() {
                 $("#welcomeSection").hide();
+                $("#logoSection").show();
                 $("#katalogSection").show();
                 $("#tentangKamiSection").show();
                 $("#commentSection").show();
@@ -59,6 +62,13 @@
             <button id="nextButton">Next</button>
         </div>
     </div>
+
+    <!-- Logo -->
+    <div id="logoSection">
+        <img src="../UTS/img/1.png">
+</div>
+
+
 
     <!-- Halaman Katalog -->
     <div id="katalogSection">
@@ -115,17 +125,17 @@
             </p>
             <img src="../UTS/img/maps.jpg" width=400px alt="left">
             <p>Untuk info lebih lanjut silahkan hubungi kontak dibawah ini :
-                <br><strong>Whatsapp : </strong><a href="https://wa.me/6282337700758;">Klik disini untuk lanjut ke chat</a>
+                <br><strong>Whatsapp : </strong><a href="https://api.whatsapp.com/send/?phone=6282337700758&text&type=phone_number&app_absent=0">Klik disini untuk lanjut ke chat</a>
             </p>
             <p>Media Sosial kami :
-                <br><strong>Instagram : </strong><a href="https://www.instagram.com/keripiktegu?igsh=MXNub3dmYWxxNHQwdA==">Klik disini untuk melihat media sosial kami</a>
+                <br><strong>Instagram : </strong><a href="https://www.instagram.com/marsyajilbab?igsh=b3NrN2Zxazl6ZWV3">Klik disini untuk melihat media sosial kami</a>
             </p>
         </div>
     </div>
 
     <!-- Halaman Comment -->
     <div id="commentSection">
-        <div id="flipComment">COMMENT</div>
+        <div id="flipComment">KOMENTAR</div>
         <div id="kotakComment">
             <h1>Komentar Pelanggan</h1>
             <form id="commentForm">
@@ -161,7 +171,7 @@
 
             <!-- Tabel untuk menampilkan komentar -->
             <div id="commentDisplay">
-                <h2>Komentar Terkini:</h2>
+                <h2>Komentar Terkini</h2>
                 <table id="commentTable" width="50%">
                     <thead>
                         <tr>
@@ -197,7 +207,7 @@
             var table = document.getElementById("commentTable").getElementsByTagName('tbody')[0];
             var newRow = table.insertRow(table.rows.length);
 
-            // Insert new cells (kolom) untuk setiap data
+            // Insert kolom baru untuk setiap data
             var cell1 = newRow.insertCell(0);
             var cell2 = newRow.insertCell(1);
             var cell3 = newRow.insertCell(2);
@@ -218,10 +228,7 @@
             document.getElementById("thankYouMessage").style.display = "block";
         });
 
-        // Inisialisasi datepicker
-        $(function() {
-            $("#date_ex").datepicker();
-        });
+
     </script>
 
 
