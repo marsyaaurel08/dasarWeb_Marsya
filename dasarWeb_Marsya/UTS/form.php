@@ -160,7 +160,7 @@
 
                 <b>Masukkan Komentar</b>
                 <br>
-                <textarea name="var4" placeholder="Fill this area" rows="7" style="width: 100%" required></textarea>
+                <textarea name="var4" placeholder="Berikan Komentarmu" rows="7" style="width: 100%" required></textarea>
                 <br><br>
                 <input type="submit" name="var5" value="Kirim">
                 <input type="reset" name="var6" value="Reset">
