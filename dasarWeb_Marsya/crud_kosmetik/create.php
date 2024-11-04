@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
     <title>BASIC CRUD</title>
 </head>
 
-<body style="background: linear-gradient(rgba(199, 96, 123, 0.5), rgba(199, 96, 123, 0.5)), url('bg.jpg') no-repeat center center fixed;background-size: 100%;">
+<body style="background: linear-gradient(rgba(199, 96, 123, 0.5), rgba(199, 96, 123, 0.5)), url('bg.jpg') no-repeat center center fixed;background-size:100%;">
     <h2 class="text-center my-3" style="font-weight:bold ; color:white" >CREATE</h2>
     <div class="card mx-5 py-2 px-3">
         <form action="create.php" method="POST">
